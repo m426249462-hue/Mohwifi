@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0A"
+    android:padding="12dp"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="الاتصال التلقائي بالواي فاي"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="اسم الشبكة (SSID):"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/ssidInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="مثال: MX"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BSSID (اختياري — قد يقلل النافذة):"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/bssidInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="AA:BB:CC:DD:EE:FF"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/verifyDot"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="●"
+                android:textSize="32sp"
+                android:textColor="#808080"
+                android:gravity="center" />
+
+            <Button
+                android:id="@+id/verifyBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="تحقق من الشبكة"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="مسار ملف كلمات المرور:"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/pathInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="/storage/emulated/0/hako.txt"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/loadBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="تحميل الملف" />
+
+            <Button
+                android:id="@+id/browseBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="استعراض…"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/speedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="المهلة لكل محاولة: 5.0 ثانية"
+            android:textColor="#FFFFFF" />
+
+        <SeekBar
+            android:id="@+id/speedSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="19"
+            android:progress="9"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ابدأ"
+            android:backgroundTint="#33B34D"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="جاهز."
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:padding="12dp"
+            android:background="#1F1F23"
+            android:layout_marginBottom="8dp" />
+
+        <ScrollView
+            android:id="@+id/logScroll"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#141416"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/logBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#B3E6B3"
+                android:fontFamily="monospace"
+                android:textSize="11sp"
+                android:padding="8dp" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/copyBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="نسخ" />
+
+            <Button
+                android:id="@+id/showBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="عرض" />
+
+            <Button
+                android:id="@+id/resetBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="إعادة ضبط" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
